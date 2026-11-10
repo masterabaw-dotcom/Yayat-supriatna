@@ -2,8 +2,9 @@
   // Ganti nomor ini (format internasional tanpa +/0 di depan) dengan nomor WhatsApp praktik Anda.
   var WA = "6281222906901";
   // Jam praktik per hari (0=Minggu): daftar [mulai, selesai] dalam menit sejak 00.00
-  var SESI = [[5 * 60, 7 * 60], [15 * 60, 22 * 60]]; // pagi 05.00-07.00, sore 15.00-22.00
-  var SCHEDULE = { 0: SESI, 1: SESI, 2: SESI, 3: SESI, 4: SESI, 5: SESI, 6: SESI };
+  var SESI = [[5 * 60, 7 * 60], [15 * 60, 22 * 60]]; // Senin-Jumat: pagi 05.00-07.00, sore 15.00-22.00
+  var AKHIR_PEKAN = [[7 * 60, 22 * 60]]; // Sabtu & Minggu: 07.00-22.00
+  var SCHEDULE = { 0: AKHIR_PEKAN, 1: SESI, 2: SESI, 3: SESI, 4: SESI, 5: SESI, 6: AKHIR_PEKAN };
   var DAYS = ["Minggu","Senin","Selasa","Rabu","Kamis","Jumat","Sabtu"];
 
   function nowJakarta() {
@@ -34,7 +35,7 @@
       }
     }
     var items = document.querySelectorAll("#hours li");
-    for (i = 0; i < items.length; i++) items[i].classList.toggle("today", parseInt(items[i].getAttribute("data-day"), 10) === n.day);
+    for (i = 0; i < items.length; i++) items[i].classList.toggle("today", items[i].getAttribute("data-days").split(",").indexOf(String(n.day)) >= 0);
   }
   renderStatus();
   setInterval(renderStatus, 60000);
