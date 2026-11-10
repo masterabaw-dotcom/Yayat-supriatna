@@ -2,9 +2,8 @@
   // Ganti nomor ini (format internasional tanpa +/0 di depan) dengan nomor WhatsApp praktik Anda.
   var WA = "6281222906901";
   // Jam praktik per hari (0=Minggu): daftar [mulai, selesai] dalam menit sejak 00.00
-  var H = function (a, b) { return [[a * 60, b * 60]]; };
-  var SCHEDULE = { 0: [], 1: H(13,22), 2: H(13,22), 3: H(13,22), 4: H(13,22), 5: H(13,22), 6: H(7,24) };
-  SCHEDULE[0] = H(7,24);
+  var SESI = [[5 * 60, 7 * 60], [15 * 60, 22 * 60]]; // pagi 05.00-07.00, sore 15.00-22.00
+  var SCHEDULE = { 0: SESI, 1: SESI, 2: SESI, 3: SESI, 4: SESI, 5: SESI, 6: SESI };
   var DAYS = ["Minggu","Senin","Selasa","Rabu","Kamis","Jumat","Sabtu"];
 
   function nowJakarta() {
