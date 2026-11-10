@@ -1,0 +1,420 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Mantri Yayat Supriatna</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Source+Sans+3:wght@400;600;700&display=swap">
+<style>
+/* Layout: one calm column of sections; the open/closed status and the vitals reference table are the page's own details. */
+:root {
+  --bg: #f4f8f6;
+  --surface: #ffffff;
+  --fg: #12302b;
+  --muted: #4d6862;
+  --line: #d3e2dd;
+  --brand: #0e6b5c;
+  --brand-ink: #ffffff;
+  --brand-soft: #dcf0ea;
+  --signal: #e8a317;
+  --signal-ink: #3b2a00;
+  --open: #1c8a4a;
+  --closed: #b4432f;
+  --font-display: "Bricolage Grotesque", "Trebuchet MS", sans-serif;
+  --font-body: "Source Sans 3", "Segoe UI", system-ui, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0c1a17; --surface: #13261f; --fg: #e3f1ec; --muted: #9ab8b0; --line: #24423a;
+    --brand: #4cc3ab; --brand-ink: #062a22; --brand-soft: #173a31;
+    --signal: #f0b83a; --signal-ink: #2d2000; --open: #52d083; --closed: #ee8670;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0c1a17; --surface: #13261f; --fg: #e3f1ec; --muted: #9ab8b0; --line: #24423a;
+  --brand: #4cc3ab; --brand-ink: #062a22; --brand-soft: #173a31;
+  --signal: #f0b83a; --signal-ink: #2d2000; --open: #52d083; --closed: #ee8670;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body {
+  background: var(--bg); color: var(--fg);
+  font: 400 17px/1.6 var(--font-body);
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 0 40px;
+}
+.wrap { max-width: 1040px; margin: 0 auto; }
+h1, h2, h3 { font-family: var(--font-display); line-height: 1.15; text-wrap: balance; margin: 0; }
+h1 { font-size: clamp(2.1rem, 6vw, 3.6rem); font-weight: 700; letter-spacing: -0.02em; }
+h2 { font-size: clamp(1.5rem, 3.5vw, 2.1rem); font-weight: 700; letter-spacing: -0.01em; }
+h3 { font-size: 1.15rem; font-weight: 700; }
+p { margin: 0; max-width: 65ch; }
+a { color: var(--brand); }
+.eyebrow { font: 700 0.78rem/1 var(--font-body); letter-spacing: 0.12em; text-transform: uppercase; color: var(--brand); }
+:focus-visible { outline: 3px solid var(--signal); outline-offset: 2px; border-radius: 4px; }
+
+/* top bar */
+.topbar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; padding-block: 18px; }
+.brand { font: 700 1.2rem var(--font-display); display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--fg); }
+.brand-mark { width: 34px; height: 34px; border-radius: 9px; background: var(--brand); display: grid; place-items: center; }
+.brand-mark svg { width: 20px; height: 20px; }
+nav { display: flex; flex-wrap: wrap; gap: 4px 18px; }
+nav a { color: var(--muted); text-decoration: none; font-weight: 600; font-size: 0.95rem; padding: 4px 0; }
+nav a:hover { color: var(--brand); }
+
+/* hero */
+.hero { display: grid; grid-template-columns: 1.25fr 1fr; gap: 32px; align-items: center; padding-block: 36px 52px; }
+.hero > * { min-width: 0; }
+.hero p.lead { font-size: 1.15rem; color: var(--muted); margin-top: 18px; }
+.cta-row { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 26px; }
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; font: 700 1rem var(--font-body); padding: 13px 22px; border-radius: 10px; border: 2px solid var(--brand); text-decoration: none; cursor: pointer; }
+.btn-primary { background: var(--brand); color: var(--brand-ink); }
+.btn-ghost { background: transparent; color: var(--brand); }
+.btn:hover { filter: brightness(1.08); }
+
+.status-card { background: var(--surface); border: 1px solid var(--line); border-radius: 18px; padding: 24px; display: grid; gap: 14px; }
+.status-line { display: flex; align-items: center; gap: 10px; font: 700 1.3rem var(--font-display); }
+.dot { width: 14px; height: 14px; border-radius: 50%; background: var(--closed); flex: none; }
+.dot.on { background: var(--open); box-shadow: 0 0 0 5px color-mix(in srgb, var(--open) 22%, transparent); }
+.status-sub { color: var(--muted); font-size: 0.97rem; }
+.hours { list-style: none; padding: 0; margin: 0; display: grid; gap: 0; font-variant-numeric: tabular-nums; }
+.hours li { display: flex; justify-content: space-between; gap: 12px; padding: 9px 0; border-top: 1px solid var(--line); font-size: 0.97rem; }
+.hours li.today { font-weight: 700; color: var(--brand); }
+.hours span:last-child { text-align: right; }
+
+section { padding-block: 44px; border-top: 1px solid var(--line); }
+.sec-head { display: grid; gap: 10px; margin-bottom: 28px; }
+.sec-head p { color: var(--muted); }
+
+/* services */
+.services { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 16px; }
+.service { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 20px; display: grid; gap: 8px; align-content: start; min-width: 0; }
+.service svg { width: 30px; height: 30px; stroke: var(--brand); fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.service p { color: var(--muted); font-size: 0.97rem; }
+
+/* vitals table */
+.table-scroll { overflow-x: auto; background: var(--surface); border: 1px solid var(--line); border-radius: 14px; }
+table { border-collapse: collapse; width: 100%; min-width: 520px; font-variant-numeric: tabular-nums; }
+th, td { text-align: left; padding: 13px 18px; border-bottom: 1px solid var(--line); font-size: 0.97rem; }
+th { font: 700 0.78rem var(--font-body); letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); background: var(--brand-soft); }
+tr:last-child td { border-bottom: 0; }
+td:nth-child(2) { font-weight: 700; color: var(--brand); white-space: nowrap; }
+.note { margin-top: 14px; color: var(--muted); font-size: 0.92rem; }
+
+/* about */
+.about { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+.about > * { min-width: 0; }
+.about p + p { margin-top: 14px; }
+.facts { display: grid; gap: 0; align-content: start; }
+.facts div { display: flex; justify-content: space-between; gap: 16px; padding: 12px 0; border-top: 1px solid var(--line); }
+.facts div:last-child { border-bottom: 1px solid var(--line); }
+.facts dt { color: var(--muted); }
+.facts dd { margin: 0; font-weight: 600; text-align: right; }
+dl.facts { margin: 0; }
+
+/* tips */
+.tips { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 16px; }
+.tip { background: var(--brand-soft); border-radius: 14px; padding: 20px; display: grid; gap: 8px; align-content: start; min-width: 0; }
+.tip p { font-size: 0.97rem; }
+
+/* emergency band */
+.emergency { background: var(--signal); color: var(--signal-ink); border-radius: 14px; padding: 18px 22px; display: flex; flex-wrap: wrap; gap: 8px 18px; align-items: center; margin-block: 8px; }
+.emergency strong { font: 700 1.1rem var(--font-display); }
+.emergency p { max-width: none; font-weight: 600; }
+
+/* booking */
+.book { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; align-items: start; }
+.book > * { min-width: 0; }
+form { background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 22px; display: grid; gap: 14px; }
+label { display: grid; gap: 6px; font-weight: 600; font-size: 0.95rem; }
+input, select, textarea { font: 400 1rem var(--font-body); color: var(--fg); background: var(--bg); border: 1px solid var(--line); border-radius: 8px; padding: 11px 12px; width: 100%; }
+textarea { min-height: 84px; resize: vertical; }
+.contact-list { display: grid; gap: 14px; }
+.contact-list div { display: grid; gap: 2px; }
+.contact-list .k { font-size: 0.8rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); font-weight: 700; }
+.contact-list .v { font: 700 1.2rem var(--font-display); word-break: break-word; }
+.preview { display: none; background: var(--brand-soft); border-radius: 10px; padding: 14px; font-size: 0.95rem; white-space: pre-wrap; gap: 10px; }
+.preview.show { display: grid; }
+.preview .actions { display: flex; flex-wrap: wrap; gap: 10px; }
+.btn.small { padding: 9px 16px; font-size: 0.92rem; }
+.copied { color: var(--brand); font-weight: 700; font-size: 0.9rem; align-self: center; }
+
+footer { padding-top: 30px; border-top: 1px solid var(--line); color: var(--muted); font-size: 0.9rem; display: grid; gap: 6px; }
+footer p { max-width: none; }
+
+@media (max-width: 760px) {
+  .hero, .about, .book { grid-template-columns: 1fr; }
+  .hero { padding-block: 20px 36px; }
+  body { font-size: 16px; }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .btn { transition: filter .15s ease; }
+}
+</style>
+
+<div class="wrap">
+  <header class="topbar">
+    <a class="brand" href="#atas">
+      <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round"><path d="M12 4v16M4 12h16"/></svg></span>
+      Mantri Yayat
+    </a>
+    <nav aria-label="Menu utama">
+      <a href="#layanan">Layanan</a>
+      <a href="#angka">Angka Normal</a>
+      <a href="#tentang">Tentang</a>
+      <a href="#tips">Tips</a>
+      <a href="#kontak">Janji &amp; Kontak</a>
+    </nav>
+  </header>
+
+  <main id="atas">
+    <div class="hero">
+      <div>
+        <p class="eyebrow">Praktik mantri kesehatan · Sukamulih, Sariwangi</p>
+        <h1 style="margin-top:14px">Pemeriksaan dasar yang dekat dari rumah Anda.</h1>
+        <p class="lead">Cek tekanan darah, gula darah, perawatan luka, imunisasi, dan pendampingan ibu hamil. Bisa datang ke tempat praktik atau dikunjungi di rumah.</p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="#kontak">Buat janji periksa</a>
+          <a class="btn btn-ghost" href="#layanan">Lihat layanan</a>
+        </div>
+      </div>
+      <aside class="status-card" aria-label="Jam praktik">
+        <div class="status-line"><span class="dot" id="dot"></span><span id="statusText">Memeriksa jam praktik…</span></div>
+        <p class="status-sub" id="statusSub">Waktu setempat: WIB</p>
+        <ul class="hours" id="hours">
+          <li data-day="1"><span>Senin</span><span>13.00–22.00</span></li>
+          <li data-day="2"><span>Selasa</span><span>13.00–22.00</span></li>
+          <li data-day="3"><span>Rabu</span><span>13.00–22.00</span></li>
+          <li data-day="4"><span>Kamis</span><span>13.00–22.00</span></li>
+          <li data-day="5"><span>Jumat</span><span>13.00–22.00</span></li>
+          <li data-day="6"><span>Sabtu</span><span>07.00–00.00</span></li>
+          <li data-day="0"><span>Minggu</span><span>07.00–00.00</span></li>
+        </ul>
+      </aside>
+    </div>
+
+    <section id="layanan">
+      <div class="sec-head">
+        <p class="eyebrow">Layanan</p>
+        <h2>Apa saja yang bisa dilayani</h2>
+        <p>Untuk keluhan ringan dan pemeriksaan rutin. Kasus yang butuh penanganan lebih lanjut dirujuk ke puskesmas atau rumah sakit.</p>
+      </div>
+      <div class="services">
+        <article class="service">
+          <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9-9.2C1.7 8.5 3.6 5 7 5c2 0 3.5 1.2 5 3 1.5-1.8 3-3 5-3 3.4 0 5.3 3.5 4 6.8C19 16.5 12 21 12 21z"/></svg>
+          <h3>Cek tekanan darah</h3>
+          <p>Pemeriksaan rutin untuk pemantauan tensi, terutama bagi lansia dan penderita hipertensi.</p>
+        </article>
+        <article class="service">
+          <svg viewBox="0 0 24 24"><path d="M12 3c3 4.5 6 7.2 6 11a6 6 0 0 1-12 0c0-3.8 3-6.5 6-11z"/></svg>
+          <h3>Gula darah, asam urat, kolesterol</h3>
+          <p>Tes cepat dari tetesan darah ujung jari, hasil langsung diketahui di tempat.</p>
+        </article>
+        <article class="service">
+          <svg viewBox="0 0 24 24"><rect x="3" y="8" width="18" height="8" rx="4" transform="rotate(-30 12 12)"/><path d="M10.5 6.8l3 5.2"/></svg>
+          <h3>Perawatan luka</h3>
+          <p>Membersihkan dan membalut luka ringan, ganti perban, dan pemantauan tanda infeksi.</p>
+        </article>
+        <article class="service">
+          <svg viewBox="0 0 24 24"><path d="M4 20l6-6M14 4l6 6M12 6l6 6-4 4-6-6zM16 2l6 6"/></svg>
+          <h3>Imunisasi</h3>
+          <p>Imunisasi dasar anak dan pengingat jadwal sesuai buku KIA.</p>
+        </article>
+        <article class="service">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="6" r="3"/><path d="M7 21v-5a5 5 0 0 1 10 0v5M9 21v-3h6v3"/></svg>
+          <h3>Ibu hamil dan balita</h3>
+          <p>Pemeriksaan kehamilan sederhana, timbang balita, dan pendampingan gizi keluarga.</p>
+        </article>
+        <article class="service">
+          <svg viewBox="0 0 24 24"><path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z"/><path d="M12 11v6M9 14h6"/></svg>
+          <h3>Kunjungan rumah</h3>
+          <p>Untuk lansia, pasien pasca-rawat, atau warga yang sulit bepergian. Silakan atur jadwal lebih dulu.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="angka">
+      <div class="sec-head">
+        <p class="eyebrow">Angka normal</p>
+        <h2>Cara membaca hasil pemeriksaan</h2>
+        <p>Acuan umum untuk orang dewasa. Hasil di luar batas ini belum tentu penyakit, tetapi perlu diperiksa ulang dan dibicarakan.</p>
+      </div>
+      <div class="table-scroll">
+        <table>
+          <thead><tr><th>Pemeriksaan</th><th>Rentang umum</th><th>Catatan</th></tr></thead>
+          <tbody>
+            <tr><td>Tekanan darah</td><td>di bawah 120/80 mmHg</td><td>Tensi 140/90 mmHg ke atas pada beberapa kali ukur perlu ditindaklanjuti.</td></tr>
+            <tr><td>Gula darah puasa</td><td>70–99 mg/dL</td><td>Puasa 8 jam sebelum tes. Hasil tes cepat dikonfirmasi di laboratorium.</td></tr>
+            <tr><td>Kolesterol total</td><td>di bawah 200 mg/dL</td><td>Dipengaruhi makanan berlemak dan aktivitas fisik.</td></tr>
+            <tr><td>Asam urat</td><td>Pria 3,4–7,0 · Wanita 2,4–6,0 mg/dL</td><td>Batas bisa sedikit berbeda antar alat.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="note">Tabel ini hanya panduan edukasi dan tidak menggantikan pemeriksaan serta saran dokter.</p>
+    </section>
+
+    <section id="tentang">
+      <div class="sec-head">
+        <p class="eyebrow">Tentang</p>
+        <h2>Mantri yang dikenal tetangga sendiri</h2>
+      </div>
+      <div class="about">
+        <div>
+          <p>Saya, Yayat Supriatna, melayani warga Kampung Cipaku, Desa Sukamulih, dan sekitarnya di Kecamatan Sariwangi, Kabupaten Tasikmalaya. Saya memberikan pemeriksaan dasar dan pendampingan kesehatan keluarga.</p>
+          <p>Tujuannya sederhana: masalah kecil ditangani lebih awal, dan masalah besar dirujuk tepat waktu ke puskesmas atau rumah sakit.</p>
+        </div>
+        <dl class="facts">
+          <div><dt>Nama</dt><dd>Mantri Yayat Supriatna</dd></div>
+          <div><dt>Wilayah layanan</dt><dd>Desa Sukamulih, Kec. Sariwangi</dd></div>
+          <div><dt>Izin praktik</dt><dd>[Nomor SIP/STR]</dd></div>
+          <div><dt>Rujukan</dt><dd>Puskesmas &amp; RS terdekat</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <section id="tips">
+      <div class="sec-head">
+        <p class="eyebrow">Tips kesehatan</p>
+        <h2>Kebiasaan kecil yang menjaga tubuh</h2>
+      </div>
+      <div class="tips">
+        <article class="tip"><h3>Kurangi garam</h3><p>Batasi garam dapur, ikan asin, dan mi instan. Pengaturan garam membantu menjaga tensi tetap stabil.</p></article>
+        <article class="tip"><h3>Jalan kaki 30 menit</h3><p>Bergerak ringan hampir setiap hari lebih baik daripada olahraga berat sesekali.</p></article>
+        <article class="tip"><h3>Cuci tangan dengan sabun</h3><p>Sebelum makan, setelah dari toilet, dan setelah beraktivitas di luar. Cara murah mencegah diare dan flu.</p></article>
+        <article class="tip"><h3>Minum air putih cukup</h3><p>Utamakan air putih. Kurangi minuman manis kemasan dan kopi bergula.</p></article>
+        <article class="tip"><h3>Periksa rutin setelah usia 40</h3><p>Cek tensi dan gula darah setidaknya sekali setiap beberapa bulan, meski tidak ada keluhan.</p></article>
+        <article class="tip"><h3>Lengkapi imunisasi anak</h3><p>Bawa buku KIA setiap kali datang agar jadwal imunisasi tidak terlewat.</p></article>
+      </div>
+    </section>
+
+    <section id="kontak">
+      <div class="emergency">
+        <strong>Gawat darurat?</strong>
+        <p>Sesak napas berat, nyeri dada, pingsan, perdarahan hebat, atau kejang: segera hubungi 112 atau bawa ke IGD terdekat. Jangan menunggu janji.</p>
+      </div>
+      <div class="sec-head" style="margin-top:32px">
+        <p class="eyebrow">Janji &amp; kontak</p>
+        <h2>Atur jadwal periksa</h2>
+        <p>Isi formulir, lalu kirim pesan yang sudah tersusun lewat WhatsApp.</p>
+      </div>
+      <div class="book">
+        <form id="bookForm" novalidate>
+          <label for="nama">Nama
+            <input id="nama" name="nama" type="text" autocomplete="name" placeholder="Nama lengkap" required>
+          </label>
+          <label for="layanan-pilih">Keperluan
+            <select id="layanan-pilih" name="layanan">
+              <option>Cek tekanan darah</option>
+              <option>Cek gula darah / asam urat / kolesterol</option>
+              <option>Perawatan luka</option>
+              <option>Imunisasi</option>
+              <option>Ibu hamil / balita</option>
+              <option>Kunjungan rumah</option>
+            </select>
+          </label>
+          <label for="waktu">Waktu yang diinginkan
+            <input id="waktu" name="waktu" type="text" placeholder="Contoh: Rabu sore, jam 16.30">
+          </label>
+          <label for="keluhan">Keluhan singkat (boleh kosong)
+            <textarea id="keluhan" name="keluhan" placeholder="Contoh: pusing sejak dua hari, tensi terakhir 150/90"></textarea>
+          </label>
+          <button class="btn btn-primary" type="submit">Susun pesan WhatsApp</button>
+          <div class="preview" id="preview" aria-live="polite">
+            <div id="previewText"></div>
+            <div class="actions">
+              <a class="btn btn-primary small" id="waLink" href="#" target="_blank" rel="noopener">Buka WhatsApp</a>
+              <button class="btn btn-ghost small" type="button" id="copyBtn">Salin pesan</button>
+              <span class="copied" id="copied" hidden>Tersalin</span>
+            </div>
+          </div>
+        </form>
+        <div class="contact-list">
+          <div><span class="k">WhatsApp</span><span class="v" id="waNumber">0812-2290-6901</span></div>
+          <div><span class="k">Alamat praktik</span><span class="v">Kp. Cipaku, Desa Sukamulih, Kec. Sariwangi, Kab. Tasikmalaya</span></div>
+          <div><span class="k">Gawat darurat</span><span class="v">112</span></div>
+          <p class="note" style="margin-top:0">Pesan ini tidak terkirim otomatis. Anda yang menekan tombol kirim di WhatsApp.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p><strong>Mantri Yayat Supriatna</strong> · Kp. Cipaku, Desa Sukamulih, Kec. Sariwangi, Kab. Tasikmalaya</p>
+    <p>Informasi di situs ini bersifat edukasi dan bukan pengganti diagnosis dokter.</p>
+  </footer>
+</div>
+
+<script>
+(function () {
+  // Ganti nomor ini (format internasional tanpa +/0 di depan) dengan nomor WhatsApp praktik Anda.
+  var WA = "6281222906901";
+  // Jam praktik per hari (0=Minggu): daftar [mulai, selesai] dalam menit sejak 00.00
+  var H = function (a, b) { return [[a * 60, b * 60]]; };
+  var SCHEDULE = { 0: [], 1: H(13,22), 2: H(13,22), 3: H(13,22), 4: H(13,22), 5: H(13,22), 6: H(7,24) };
+  SCHEDULE[0] = H(7,24);
+  var DAYS = ["Minggu","Senin","Selasa","Rabu","Kamis","Jumat","Sabtu"];
+
+  function nowJakarta() {
+    var p = new Intl.DateTimeFormat("en-US", { timeZone: "Asia/Jakarta", weekday: "short", hour: "2-digit", minute: "2-digit", hour12: false }).formatToParts(new Date());
+    var m = {}; p.forEach(function (x) { m[x.type] = x.value; });
+    var idx = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"].indexOf(m.weekday);
+    return { day: idx, min: (parseInt(m.hour, 10) % 24) * 60 + parseInt(m.minute, 10) };
+  }
+  function fmt(min) { var h = Math.floor(min / 60) % 24, mm = min % 60; return (h < 10 ? "0" : "") + h + "." + (mm < 10 ? "0" : "") + mm; }
+
+  function renderStatus() {
+    var n = nowJakarta(), slots = SCHEDULE[n.day] || [], open = null, next = null, i;
+    for (i = 0; i < slots.length; i++) {
+      if (n.min >= slots[i][0] && n.min < slots[i][1]) { open = slots[i]; break; }
+      if (n.min < slots[i][0] && !next) next = slots[i];
+    }
+    var dot = document.getElementById("dot"), t = document.getElementById("statusText"), s = document.getElementById("statusSub");
+    if (open) {
+      dot.className = "dot on"; t.textContent = "Praktik buka sekarang";
+      s.textContent = "Tutup pukul " + fmt(open[1]) + " WIB";
+    } else {
+      dot.className = "dot"; t.textContent = "Praktik sedang tutup";
+      if (next) { s.textContent = "Buka lagi hari ini pukul " + fmt(next[0]) + " WIB"; }
+      else {
+        var d = (n.day + 1) % 7, k = 0;
+        while ((SCHEDULE[d] || []).length === 0 && k < 7) { d = (d + 1) % 7; k++; }
+        s.textContent = "Buka lagi " + DAYS[d] + " pukul " + fmt(SCHEDULE[d][0][0]) + " WIB";
+      }
+    }
+    var items = document.querySelectorAll("#hours li");
+    for (i = 0; i < items.length; i++) items[i].classList.toggle("today", parseInt(items[i].getAttribute("data-day"), 10) === n.day);
+  }
+  renderStatus();
+  setInterval(renderStatus, 60000);
+
+  var form = document.getElementById("bookForm"), msg = "";
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    var nama = document.getElementById("nama").value.trim();
+    var nameEl = document.getElementById("nama");
+    if (!nama) { nameEl.focus(); nameEl.style.borderColor = "var(--closed)"; return; }
+    nameEl.style.borderColor = "";
+    var lay = document.getElementById("layanan-pilih").value;
+    var waktu = document.getElementById("waktu").value.trim();
+    var kel = document.getElementById("keluhan").value.trim();
+    msg = "Halo Mantri, saya " + nama + ". Saya ingin membuat janji: " + lay + "." +
+      (waktu ? " Waktu yang saya inginkan: " + waktu + "." : "") +
+      (kel ? " Keluhan: " + kel + "." : "") + " Terima kasih.";
+    document.getElementById("previewText").textContent = msg;
+    document.getElementById("waLink").href = "https://wa.me/" + WA + "?text=" + encodeURIComponent(msg);
+    document.getElementById("preview").classList.add("show");
+    document.getElementById("copied").hidden = true;
+  });
+  document.getElementById("copyBtn").addEventListener("click", function () {
+    var ok = document.getElementById("copied");
+    function done() { ok.hidden = false; ok.textContent = "Tersalin"; }
+    function fail() {
+      var r = document.createRange(); r.selectNodeContents(document.getElementById("previewText"));
+      var sel = window.getSelection(); sel.removeAllRanges(); sel.addRange(r);
+      ok.hidden = false; ok.textContent = "Teks terpilih, tekan salin";
+    }
+    try { navigator.clipboard.writeText(msg).then(done, fail); } catch (err) { fail(); }
+  });
+})();
+</script>
+
+</body></html>
