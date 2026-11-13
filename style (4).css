@@ -1,0 +1,152 @@
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}
+/* Semua class dan ID memakai awalan "yayat_" sesuai aturan soal. */
+:root {
+  --bg: #f4f8f6;
+  --surface: #ffffff;
+  --fg: #12302b;
+  --muted: #4d6862;
+  --line: #d3e2dd;
+  --brand: #0e6b5c;
+  --brand-ink: #ffffff;
+  --brand-soft: #dcf0ea;
+  --signal: #e8a317;
+  --signal-ink: #3b2a00;
+  --open: #1c8a4a;
+  --closed: #b4432f;
+  --font-display: "Bricolage Grotesque", "Trebuchet MS", sans-serif;
+  --font-body: "Source Sans 3", "Segoe UI", system-ui, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0c1a17; --surface: #13261f; --fg: #e3f1ec; --muted: #9ab8b0; --line: #24423a;
+    --brand: #4cc3ab; --brand-ink: #062a22; --brand-soft: #173a31;
+    --signal: #f0b83a; --signal-ink: #2d2000; --open: #52d083; --closed: #ee8670;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0c1a17; --surface: #13261f; --fg: #e3f1ec; --muted: #9ab8b0; --line: #24423a;
+  --brand: #4cc3ab; --brand-ink: #062a22; --brand-soft: #173a31;
+  --signal: #f0b83a; --signal-ink: #2d2000; --open: #52d083; --closed: #ee8670;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body {
+  background: var(--bg); color: var(--fg);
+  font: 400 17px/1.6 var(--font-body);
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 0 40px;
+}
+.yayat_wrap { max-width: 1040px; margin: 0 auto; }
+h1, h2, h3 { font-family: var(--font-display); line-height: 1.15; text-wrap: balance; margin: 0; }
+h1 { font-size: clamp(2.1rem, 6vw, 3.6rem); font-weight: 700; letter-spacing: -0.02em; }
+h2 { font-size: clamp(1.5rem, 3.5vw, 2.1rem); font-weight: 700; letter-spacing: -0.01em; }
+h3 { font-size: 1.15rem; font-weight: 700; }
+p { margin: 0; max-width: 65ch; }
+a { color: var(--brand); }
+.yayat_eyebrow { font: 700 0.78rem/1 var(--font-body); letter-spacing: 0.12em; text-transform: uppercase; color: var(--brand); }
+:focus-visible { outline: 3px solid var(--signal); outline-offset: 2px; border-radius: 4px; }
+
+/* top bar */
+.yayat_topbar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; padding-block: 18px; }
+.yayat_brand { font: 700 1.2rem var(--font-display); display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--fg); }
+.yayat_brand_mark { width: 34px; height: 34px; border-radius: 9px; background: var(--brand); display: grid; place-items: center; }
+.yayat_brand_mark svg { width: 20px; height: 20px; }
+#yayat_menu { display: flex; flex-wrap: wrap; gap: 4px 18px; }
+#yayat_menu a { color: var(--muted); text-decoration: none; font-weight: 600; font-size: 0.95rem; padding: 4px 0; }
+#yayat_menu a:hover { color: var(--brand); }
+#yayat_menu a.yayat_active { color: var(--brand); border-bottom: 2px solid var(--brand); }
+
+/* hero */
+.yayat_hero { display: grid; grid-template-columns: 1.25fr 1fr; gap: 32px; align-items: center; padding-block: 36px 52px; }
+.yayat_hero > * { min-width: 0; }
+.yayat_hero p.yayat_lead { font-size: 1.15rem; color: var(--muted); margin-top: 18px; }
+.yayat_btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; font: 700 1rem var(--font-body); padding: 13px 22px; border-radius: 10px; border: 2px solid var(--brand); text-decoration: none; cursor: pointer; }
+.yayat_btn_primary { background: var(--brand); color: var(--brand-ink); }
+.yayat_btn_ghost { background: transparent; color: var(--brand); }
+.yayat_btn:hover { filter: brightness(1.08); }
+
+.yayat_status_card { background: var(--surface); border: 1px solid var(--line); border-radius: 18px; padding: 24px; display: grid; gap: 14px; }
+.yayat_status_line { display: flex; align-items: center; gap: 10px; font: 700 1.3rem var(--font-display); }
+.yayat_dot { width: 14px; height: 14px; border-radius: 50%; background: var(--closed); flex: none; }
+.yayat_dot.yayat_on { background: var(--open); box-shadow: 0 0 0 5px color-mix(in srgb, var(--open) 22%, transparent); }
+.yayat_status_sub { color: var(--muted); font-size: 0.97rem; }
+.yayat_hours { list-style: none; padding: 0; margin: 0; display: grid; gap: 0; font-variant-numeric: tabular-nums; }
+.yayat_hours li { display: flex; justify-content: space-between; gap: 12px; padding: 9px 0; border-top: 1px solid var(--line); font-size: 0.97rem; }
+.yayat_hours li.yayat_today { font-weight: 700; color: var(--brand); }
+.yayat_hours span:last-child { text-align: right; }
+
+section { padding-block: 44px; border-top: 1px solid var(--line); }
+.yayat_sec_head { display: grid; gap: 10px; margin-bottom: 28px; }
+.yayat_sec_head p { color: var(--muted); }
+
+/* services */
+.yayat_services { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 16px; }
+.yayat_service { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 20px; display: grid; gap: 8px; align-content: start; min-width: 0; }
+.yayat_service svg { width: 30px; height: 30px; stroke: var(--brand); fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.yayat_service p { color: var(--muted); font-size: 0.97rem; }
+
+/* vitals table */
+.yayat_table_scroll { overflow-x: auto; background: var(--surface); border: 1px solid var(--line); border-radius: 14px; }
+table { border-collapse: collapse; width: 100%; min-width: 520px; font-variant-numeric: tabular-nums; }
+th, td { text-align: left; padding: 13px 18px; border-bottom: 1px solid var(--line); font-size: 0.97rem; }
+th { font: 700 0.78rem var(--font-body); letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); background: var(--brand-soft); }
+tr:last-child td { border-bottom: 0; }
+td:nth-child(2) { font-weight: 700; color: var(--brand); white-space: nowrap; }
+.yayat_note { margin-top: 14px; color: var(--muted); font-size: 0.92rem; }
+
+/* about */
+.yayat_about { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+.yayat_about > * { min-width: 0; }
+.yayat_about p + p { margin-top: 14px; }
+.yayat_facts { display: grid; gap: 0; align-content: start; margin: 0; }
+.yayat_facts div { display: flex; justify-content: space-between; gap: 16px; padding: 12px 0; border-top: 1px solid var(--line); }
+.yayat_facts div:last-child { border-bottom: 1px solid var(--line); }
+.yayat_facts dt { color: var(--muted); }
+.yayat_facts dd { margin: 0; font-weight: 600; text-align: right; }
+
+/* tips */
+.yayat_tips { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 16px; }
+.yayat_tip { background: var(--brand-soft); border-radius: 14px; padding: 20px; display: grid; gap: 8px; align-content: start; min-width: 0; }
+.yayat_tip p { font-size: 0.97rem; }
+
+/* emergency band */
+.yayat_emergency { background: var(--signal); color: var(--signal-ink); border-radius: 14px; padding: 18px 22px; display: flex; flex-wrap: wrap; gap: 8px 18px; align-items: center; margin-block: 8px; }
+.yayat_emergency strong { font: 700 1.1rem var(--font-display); }
+.yayat_emergency p { max-width: none; font-weight: 600; }
+
+/* booking */
+.yayat_book { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; align-items: start; }
+.yayat_book > * { min-width: 0; }
+form { background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 22px; display: grid; gap: 14px; }
+label { display: grid; gap: 6px; font-weight: 600; font-size: 0.95rem; }
+input, select, textarea { font: 400 1rem var(--font-body); color: var(--fg); background: var(--bg); border: 1px solid var(--line); border-radius: 8px; padding: 11px 12px; width: 100%; }
+textarea { min-height: 84px; resize: vertical; }
+.yayat_contact_list { display: grid; gap: 14px; }
+.yayat_contact_list div { display: grid; gap: 2px; }
+.yayat_contact_list .yayat_k { font-size: 0.8rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); font-weight: 700; }
+.yayat_contact_list .yayat_v { font: 700 1.2rem var(--font-display); word-break: break-word; }
+.yayat_preview { display: none; background: var(--brand-soft); border-radius: 10px; padding: 14px; font-size: 0.95rem; white-space: pre-wrap; gap: 10px; }
+.yayat_preview.yayat_show { display: grid; }
+.yayat_preview .yayat_actions { display: flex; flex-wrap: wrap; gap: 10px; }
+.yayat_btn.yayat_small { padding: 9px 16px; font-size: 0.92rem; }
+.yayat_copied { color: var(--brand); font-weight: 700; font-size: 0.9rem; align-self: center; }
+
+#yayat_footer { padding-top: 30px; border-top: 1px solid var(--line); color: var(--muted); font-size: 0.9rem; display: grid; gap: 6px; }
+#yayat_footer p { max-width: none; }
+
+@media (max-width: 760px) {
+  .yayat_hero, .yayat_about, .yayat_book { grid-template-columns: 1fr; }
+  .yayat_hero { padding-block: 20px 36px; }
+  body { font-size: 16px; }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .yayat_btn { transition: filter .15s ease; }
+}
+
+.yayat_page { border-top: 0; padding-top: 28px; }
+details { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 16px 18px; }
+details + details { margin-top: 12px; }
+summary { font: 700 1.05rem var(--font-display); cursor: pointer; }
+details p { margin-top: 10px; color: var(--muted); }
